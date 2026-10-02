@@ -1,0 +1,273 @@
+/* ============================================================
+   GLOBAL TYPOGRAPHY — MicroTeach
+   Change fonts here and it updates the entire site.
+   ============================================================ */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* --- Font Family Variables --- */
+:root {
+  /* Safe Area Insets (iOS Notches, Dynamic Island & Android Navigation) */
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+
+  /* ============================================================
+     COLOR THEME — single source of truth for the whole site.
+     Scarlet Rush / Muted Teal / Lemon Chiffon / Light Bronze
+     ============================================================ */
+
+  /* Brand — primary (MicroTeach Iconic Red) */
+  --color-primary: #df2935;
+  --color-primary-dark: #b81d28;
+  --color-primary-soft: #fadedb;
+
+  /* Brand — secondary (Muted Teal) */
+  --color-secondary: #86ba90;
+  --color-secondary-dark: #6ba578;
+  --color-secondary-ink: #3d7a57;
+  --color-secondary-soft: #e4f2e8;
+
+  /* Brand — surface */
+  --color-surface: #f5f3bb;
+  --color-surface-soft: #fbfae6;
+  --color-surface-strong: #f0ea8f;
+
+  /* Brand — accent (Light Bronze) */
+  --color-accent: #dfa06e;
+  --color-accent-dark: #c9854f;
+  --color-accent-ink: #96602f;
+  --color-accent-soft: #f5e3d3;
+
+  /* Feedback */
+  --color-danger: #b42318;
+  --color-danger-soft: #fdeae8;
+
+  /* Text */
+  --color-ink: #1a1a2e;
+  --color-ink-muted: #6b6b76;
+  --color-ink-faint: #9b9ba7;
+
+  /* Surfaces & lines */
+  --color-bg: #faf9f3;
+  --color-surface-alt: #f1f0e7;
+  --color-border: #e6e4da;
+  --color-card: #ffffff;
+
+  /* Secondary text (body, labels, UI) — neo-grotesque sans-serif */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Monospace for code, input fields, technical elements */
+  --font-mono: 'Courier New', 'SF Mono', 'Fira Code', monospace;
+
+  /* Primary text (headings & bigger display text) */
+  --font-heading: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Heading Sizes --- */
+  --text-h1: 2.0rem;
+  --text-h2: 1.5rem;
+  --text-h3: 1.25rem;
+  --text-h4: 1.1rem;
+  --text-h5: 1rem;
+  --text-h6: 0.875rem;
+
+  /* --- Body / Paragraph Sizes --- */
+  --text-body-lg: 1.0rem;
+  --text-body: 0.9375rem;   /* 15px */
+  --text-body-sm: 0.875rem; /* 14px */
+  --text-body-xs: 0.75rem;  /* 12px */
+
+  /* --- Font Weights --- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* --- Line Heights --- */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* --- Letter Spacing --- */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+
+  /* --- Motion --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   PAGE-LOAD MOTION — shared keyframes for entrance animations
+   ============================================================ */
+@keyframes mt-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mt-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mt-card-in {
+  from { opacity: 0; transform: translateY(26px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes mt-page-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Wraps every routed page (see PageEnter in App.jsx) */
+.page-enter {
+  animation: mt-page-in 0.55s var(--ease-out) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .login-page-wrapper,
+  .login-left-panel,
+  .login-form > *,
+  .login-right-panel,
+  .center-brand,
+  .register-page-wrapper,
+  .register-card,
+  .register-card > *,
+  .register-form > * {
+    animation: none !important;
+  }
+}
+
+/* --- Global Base Styles --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+}
+
+/* Prevent iOS Safari auto-zoom on input focus when font-size < 16px */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+h1 { font-size: var(--text-h1); }
+h2 { font-size: var(--text-h2); }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+h5 { font-size: var(--text-h5); }
+h6 { font-size: var(--text-h6); }
+
+/* --- Paragraph / Body --- */
+p {
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* --- Links --- */
+a {
+  font-family: var(--font-primary);
+  font-size: inherit;
+  font-weight: var(--weight-medium);
+  text-decoration: none;
+}
+
+/* --- Form Elements --- */
+input, textarea, select, button {
+  font-family: var(--font-primary);
+}
+
+code, pre, .mono {
+  font-family: var(--font-mono);
+}
+
+/* --- Utility Classes --- */
+.text-xs   { font-size: var(--text-body-xs); }
+.text-sm   { font-size: var(--text-body-sm); }
+.text-base { font-size: var(--text-body); }
+.text-lg   { font-size: var(--text-body-lg); }
+.text-h1   { font-size: var(--text-h1); }
+.text-h2   { font-size: var(--text-h2); }
+.text-h3   { font-size: var(--text-h3); }
+
+.font-medium    { font-weight: var(--weight-medium); }
+.font-semibold  { font-weight: var(--weight-semibold); }
+.font-bold      { font-weight: var(--weight-bold); }
+
+/* ========== ADMIN LAYOUT ========== */
+.admin-content {
+  padding: 20px 24px 20px 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================================
+   MATERIAL SYMBOLS — ligature icons (e.g. "schedule", "people")
+   ============================================================ */
+.meta-icon,
+.section-icon-box {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

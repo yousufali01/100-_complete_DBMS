@@ -1,0 +1,225 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.page-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-ink-muted);
+}
+
+.breadcrumb-sep { color: var(--color-ink-faint); }
+
+.breadcrumb-active {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.page-subtitle {
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+}
+
+.loading-text {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-ink-muted);
+  font-size: 14px;
+}
+
+/* ========== POSTS TABLE ========== */
+.posts-table-container {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.posts-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+}
+
+.posts-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.posts-table td {
+  padding: 14px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.posts-table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.posts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.th-id,
+.td-id {
+  width: 60px;
+  color: var(--color-ink-faint);
+  font-size: 12px;
+}
+
+/* Author Cell */
+.author-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 13px;
+}
+
+.author-dept {
+  font-size: 11px;
+  color: var(--color-ink-faint);
+}
+
+/* Course Code */
+.course-code {
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--color-surface-alt);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/* Title */
+.td-title {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* Category */
+.category-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Bounty */
+.td-bounty {
+  font-weight: 600;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/* Deadline */
+.td-deadline {
+  color: var(--color-ink-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-active {
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary-ink);
+}
+
+.status-pending {
+  background: var(--color-surface);
+  color: var(--color-accent-ink);
+}
+
+.status-resolved {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+.status-closed {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-muted);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-ink-faint);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

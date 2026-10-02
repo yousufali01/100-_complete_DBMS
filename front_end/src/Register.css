@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.register-page-wrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-bg);
+  font-family: var(--font-primary);
+  color: var(--color-ink);
+  padding: max(24px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+}
+
+.register-card {
+  background: #fff;
+  width: 100%;
+  max-width: 490px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px -12px rgba(148, 163, 184, 0.25);
+  border: 1px solid var(--color-border);
+  padding: 32px 40px;
+}
+
+/* Header */
+.register-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.register-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.register-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.register-logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.register-logo-text {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--color-ink);
+}
+
+.register-logo-dot {
+  color: var(--color-primary);
+  font-weight: 400;
+  margin-left: 2px;
+  font-size: 10px;
+  vertical-align: super;
+}
+
+.register-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.025em;
+}
+
+.register-subtitle {
+  font-size: 13.5px;
+  color: var(--color-ink-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* SSO Button */
+.register-sso-section {
+  margin-bottom: 0;
+}
+
+.register-sso-btn {
+  width: 100%;
+  height: 44px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.register-sso-btn:hover {
+  background: var(--color-surface-alt);
+}
+
+.register-sso-btn svg {
+  color: var(--color-ink);
+}
+
+/* Divider */
+.register-divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.register-divider-line {
+  flex: 1;
+  border-top: 1px solid var(--color-border);
+}
+
+.register-divider-text {
+  padding: 0 12px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-faint);
+  background: #fff;
+}
+
+/* Error Message */
+.register-error-message {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--color-danger);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-muted);
+  margin-bottom: 6px;
+}
+
+.register-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.register-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--color-ink-faint);
+  pointer-events: none;
+}
+
+.register-input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--color-ink);
+  outline: none;
+  transition: all 0.2s;
+}
+
+.register-input:focus {
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 3px rgba(31, 56, 100, 0.12);
+}
+
+.register-input::placeholder {
+  color: var(--color-ink-faint);
+}
+
+/* Select */
+.register-select {
+  width: 100%;
+  padding: 10px 40px 10px 40px;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--color-ink);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s;
+}
+
+.register-select:focus {
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 3px rgba(31, 56, 100, 0.12);
+}
+
+.register-select-arrow {
+  position: absolute;
+  right: 14px;
+  color: var(--color-ink-faint);
+  pointer-events: none;
+}
+
+/* Password Toggle */
+.register-password-toggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-ink-faint);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-password-toggle:hover {
+  color: var(--color-ink-muted);
+}
+
+/* Password Hints */
+.register-password-hints {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+.register-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--color-ink-muted);
+}
+
+.register-hint-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-surface-alt);
+}
+
+/* Terms Checkbox */
+.register-terms {
+  padding-top: 4px;
+}
+
+.register-terms-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+}
+
+.register-checkbox {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.register-terms-label span {
+  margin-left: 10px;
+}
+
+.register-terms-label a {
+  color: var(--color-ink);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.register-terms-label a:hover {
+  color: var(--color-ink);
+}
+
+/* Submit Button */
+.register-submit-wrapper {
+  padding-top: 8px;
+}
+
+.register-submit-btn {
+  width: 100%;
+  height: 44px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 4px 6px -1px rgba(31, 56, 100, 0.15);
+}
+
+.register-submit-btn:hover {
+  background: var(--color-ink);
+}
+
+.register-submit-btn:active {
+  transform: scale(0.99);
+}
+
+.register-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Login Link */
+.register-login-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+.register-login-link a {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.register-login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Trust Footer */
+.register-trust-footer {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.register-trust-footer span {
+  font-size: 11.5px;
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .register-card {
+    padding: 24px 20px;
+  }
+  
+  .register-title {
+    font-size: 20px;
+  }
+}
+
+/* ── Page-load motion (staggered entrance) ── */
+.register-card {
+  animation: mt-card-in 0.8s var(--ease-out) 0.05s backwards;
+}
+
+.register-card > .register-header {
+  animation: mt-rise 0.7s var(--ease-out) 0.15s backwards;
+}
+
+.register-card > .register-sso-section {
+  animation: mt-rise 0.7s var(--ease-out) 0.22s backwards;
+}
+
+.register-card > .register-divider {
+  animation: mt-rise 0.7s var(--ease-out) 0.28s backwards;
+}
+
+.register-card > .register-error-message {
+  animation: mt-rise 0.7s var(--ease-out) 0.32s backwards;
+}
+
+.register-form > :nth-child(1) { animation: mt-rise 0.7s var(--ease-out) 0.32s backwards; }
+.register-form > :nth-child(2) { animation: mt-rise 0.7s var(--ease-out) 0.37s backwards; }
+.register-form > :nth-child(3) { animation: mt-rise 0.7s var(--ease-out) 0.42s backwards; }
+.register-form > :nth-child(4) { animation: mt-rise 0.7s var(--ease-out) 0.47s backwards; }
+.register-form > :nth-child(5) { animation: mt-rise 0.7s var(--ease-out) 0.52s backwards; }
+
+.register-form > .register-terms {
+  animation: mt-rise 0.7s var(--ease-out) 0.58s backwards;
+}
+
+.register-form > .register-submit-wrapper {
+  animation: mt-rise 0.7s var(--ease-out) 0.64s backwards;
+}
+
+.register-card > .register-login-link {
+  animation: mt-rise 0.7s var(--ease-out) 0.72s backwards;
+}
+
+.register-card > .register-trust-footer {
+  animation: mt-rise 0.7s var(--ease-out) 0.78s backwards;
+}

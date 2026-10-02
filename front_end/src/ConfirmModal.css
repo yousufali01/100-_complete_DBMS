@@ -1,0 +1,138 @@
+.cm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cm-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: cmSlideIn 0.2s ease-out;
+}
+
+@keyframes cmSlideIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cm-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 24px 0 24px;
+}
+
+.cm-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.cm-header.cm-danger h3 {
+  color: var(--color-danger);
+}
+
+.cm-header.cm-success h3 {
+  color: var(--color-secondary-ink);
+}
+
+.cm-icon {
+  font-size: 1.3rem;
+}
+
+.cm-body {
+  padding: 16px 24px;
+}
+
+.cm-body p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+}
+
+.cm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 24px 20px 24px;
+}
+
+.cm-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.cm-btn-cancel {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-muted);
+}
+
+.cm-btn-cancel:hover {
+  background: var(--color-surface-alt);
+}
+
+.cm-btn-confirm {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.cm-btn-confirm:hover {
+  background: var(--color-primary-dark);
+}
+
+.cm-btn-danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.cm-btn-danger:hover {
+  background: var(--color-danger);
+}
+
+.cm-btn-success {
+  background: var(--color-secondary);
+  color: var(--color-ink);
+}
+
+.cm-btn-success:hover {
+  background: var(--color-secondary);
+}
+
+/* ── Mobile Responsive Support ── */
+@media (max-width: 480px) {
+  .cm-overlay {
+    padding: 12px;
+  }
+
+  .cm-modal {
+    border-radius: 16px;
+    width: 100%;
+  }
+
+  .cm-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+    padding: 0 18px max(18px, env(safe-area-inset-bottom)) 18px;
+  }
+
+  .cm-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
